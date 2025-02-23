@@ -4,6 +4,13 @@
 
 ---
 
+## Beta Demo
+点击下面的图片查看演示视频:
+
+[![Demo Video](https://img.youtube.com/vi/3Pv8UDvxwpY/0.jpg)](https://youtu.be/3Pv8UDvxwpY)
+
+---
+
 ## 简介
 
 传统密码管理器通常存在以下问题：

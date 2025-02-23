@@ -3,6 +3,14 @@
 **The New Era Password Manager — OnionVault**
 
 [中文版](docs/theory_paper/zh/README.md)
+
+---
+
+## Beta Demo
+Click below to watch the demo:
+
+[![Demo Video](https://img.youtube.com/vi/3Pv8UDvxwpY/0.jpg)](https://youtu.be/3Pv8UDvxwpY)
+
 ---
 
 ## Introduction
