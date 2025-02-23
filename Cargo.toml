@@ -1,0 +1,37 @@
+[workspace.package]
+# name = "onion_vault"
+version = "0.0.1"  #:version
+authors = ["Ryder Freeman <RyderFreeman4Logos@gmail.com>"]
+description = """
+onion_vault
+"""
+# documentation = ""
+# homepage = ""
+# repository = ""
+license = "Apache-2.0"
+keywords = ["privacy", "encrypt", "password manager", "password", "onion"]
+categories = ["command-line-utilities", "text-processing"]
+exclude = [
+  "HomebrewFormula",
+  "/.github/",
+  "/ci/",
+  "/pkg/brew",
+  "/benchsuite/",
+  "/scripts/",
+]
+# autotests = false
+edition = "2021"
+
+
+
+
+[workspace]
+members = [
+    "crates/uni_vault",
+    "crates/onion_vault_cli",
+    "crates/onion_vault_core",
+    # "crates/onion_vault_tui",
+    "crates/signature_to_keys",
+]
+resolver = "2"
+

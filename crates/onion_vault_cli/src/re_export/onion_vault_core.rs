@@ -1,0 +1,32 @@
+pub use onion_vault_core::{
+    onion_vault::{
+        OnionVault,
+        OnionVaultBuilder,
+    },
+    vault_map::VaultMap,
+    identity_group::{
+        IdentityGroup,
+        IdentityGroupBuilder,
+        account::{
+            Account,
+            AccountBuilder,
+            account_credential::{
+                AccountCredential,
+                AccountCredentialBuilder,
+            },
+        },
+    },
+    common::{
+        traits::{
+            JsonSerializable,
+            TrezorEncryptable,
+        },
+        enums::DataState,
+        test_helpers::{
+            TREZOR_ENCRYPT_COMMENT,
+            debug_with_line,
+            print_json_with_line,
+        },
+    },
+    re_export::uni_vault::RageTrezorEncryptor,
+};
