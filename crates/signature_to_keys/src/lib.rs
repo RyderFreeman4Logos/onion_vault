@@ -32,7 +32,7 @@ pub trait SignatureToKeyGenerator {
     /// A Result containing the new instance or an error if generation fails.
     fn sign_with_bip32_path(path: &str, hint_message: &str) -> anyhow::Result<Self> where Self: Sized;
 
-    /// Get the signature field of Self (of type Vec<u8>). If this field has not been set through
+    /// Get the signature field of Self (of type `Vec<u8>`). If this field has not been set through
     /// signing a message (i.e., its value is None), throw an error.
     /// 
     /// Obtain the signature of a specific message with a specific private key. There are no
