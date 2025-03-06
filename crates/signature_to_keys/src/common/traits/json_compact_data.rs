@@ -28,7 +28,7 @@ impl JsonCompactData for String {
             if line.contains("\"data\": [") {
                 is_in_data = true;
                 // Start building the data content with an opening bracket.
-                data_content.push_str("[");
+                data_content.push('[');
             } 
             // If we're in the data section and we've reached the end of the array.
             else if is_in_data && line.contains(']') {
