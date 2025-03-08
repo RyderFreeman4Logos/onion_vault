@@ -5,6 +5,7 @@ mod tests;
 use crate::re_export::std_anyhow::*;
 use crate::SignatureToKeyGenerator;
 
+
 // Import external dependencies
 use trezor_client::client::Signature;
 
@@ -41,7 +42,6 @@ pub struct TrezorGenerator {
     seed: [u8; 32],
 }
 
-// Implementing the `SignatureToKeyGenerator` trait for `TrezorGenerator`
 impl SignatureToKeyGenerator for TrezorGenerator {
     /// Retrieve the stored signature or return an error if not available
     fn signature(&self) -> anyhow::Result<Vec<u8>> {
@@ -75,7 +75,11 @@ impl SignatureToKeyGenerator for TrezorGenerator {
     }
 }
 
-// Additional methods for `TrezorGenerator`
+#[cfg(feature = "ssh_ed25519")]
+impl crate::SshEd25519KeyGenerator for TrezorGenerator {}
+#[cfg(feature = "rage")]
+impl crate::RageIdentityGenerator for TrezorGenerator {}
+
 impl TrezorGenerator {
     /// Sign a message using a connected Trezor device
     pub fn sign_msg_with_trezor(&mut self, msg: &str) -> anyhow::Result<String> {
