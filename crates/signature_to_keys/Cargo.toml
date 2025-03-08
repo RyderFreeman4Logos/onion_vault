@@ -1,6 +1,6 @@
 [package]
 name = "signature_to_keys"
-version = "0.0.3"
+version = "0.1.0"
 description = """
 A deterministic subkey derivation crate that signs human-readable strings using a master private key,
 hashes the signature via SHA-256 to generate a 256-bit seed,
@@ -19,16 +19,17 @@ categories = ["cryptography", ]
 rust-version = "1.84.1"
 
 [dependencies]
-age = { version = "0.11.1", features = ["armor", "ssh"] }
 anyhow = { version = "1.0.95", features = ["backtrace"] }
-bech32 = "0.11.0"
 derive_builder = "0.20.2"
-hex = "0.4.3"
-hkdf = "0.12.4"
 serde = { version = "1.0.217", features = ["derive"] }
 serde_json = "1.0.137"
 sha2 = "0.10.8"
-ssh-key = { version = "0.6.7", features = ["ed25519", "rand_core"] }
 trezor-client = "0.1.4"
-x25519-dalek = "2.0.1"
 zeroize = "1.8.1"
+ssh-key = { version = "0.6.7", optional = true, features = ["ed25519", "rand_core"] }
+age = { version = "0.11.1",  optional = true, features = ["armor", "ssh"] }
+
+[features]
+default = ["rage"]
+ssh_ed25519 = ["ssh-key"]
+rage = ["ssh_ed25519", "age"]
